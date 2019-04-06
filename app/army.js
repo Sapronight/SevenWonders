@@ -42,10 +42,10 @@ class army {
 
 
 		if(this.hp_ <= 0 ){
-			this.setStatus("Dead");
+			this.setStatus("dead");
 		}
 		else if(otherArmy.hp_ <= 0){
-			otherArmy.setStatus("Dead");
+			otherArmy.setStatus("dead");
 		}
 	}
 

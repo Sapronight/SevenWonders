@@ -1,16 +1,19 @@
 const {Divinity} = require('../divinity');
 const {army} = require('./army');
+const {trade} = require('./trade');
 
 
 class City {
-	constructor(name, divinityName) {
+	constructor(name, divinityName, traderName) {
 		this.name_ = name || 'UNKCITY';
 		this.divinity_ = new Divinity(divinityName);
 		this.corn_ = 1000;
 		this.gold_ = 1000;
 		this.tableArmy_ = []; // Tableau de troupe
 		this.maxArmy = 10; //Seulement 10 troupes par ville
+		this.trader_ = new trade(traderName);
 		this.init();
+
 	}
 
 	init() {
@@ -124,6 +127,12 @@ class City {
 			this.tableArmy_.splice(tab_temp[i] - cpt, 1);
 			cpt += 1;
 		}
+	}
+
+	tradingCity(){
+		this.trader_.setStock(this.corn_);
+		this.gold_ += this.trader_.trading();
+		this.showInfoCity();
 	}
 
 }

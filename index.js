@@ -4,7 +4,7 @@ const {army} = require('./app/army');
 
 
 
-const bBottom = new City('Bikini bottom', 'Bob l\'éponge');
+const bBottom = new City('Bikini bottom', 'Bob l\'éponge', 'Caravane');
 const WallOfDeath = new army(5000, 'WallOfDeath', 500000, 25);
 
 bBottom.spawnArmy('Peon');
@@ -13,10 +13,14 @@ bBottom.spawnArmy('Peon');
 bBottom.spawnArmy('Shield');
 bBottom.actionArmy(WallOfDeath);
 bBottom.actionArmy(WallOfDeath);
+bBottom.actionArmy(WallOfDeath);
+bBottom.actionArmy(WallOfDeath);
+
 
 
 
 setInterval(() => bBottom.showInfoCity(), 1000);
 setInterval(() => bBottom.giveCityCG(), 2000);
+setInterval(() => bBottom.tradingCity(), 10000);
 
 
