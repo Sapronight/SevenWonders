@@ -7,8 +7,7 @@ class army {
 		this.hp_ = armyHp || 100;
 		this.damage_ = armyD || 10;
 		this.mode_ = "defend";
-		this.cityLinked = "UNKCITY";
-		this.status = "Hp_Full";
+		this.status_ = "Hp_Full";
 	}
 
 	//Accesseur et Mutateur
@@ -16,18 +15,17 @@ class army {
 		return this.damage_;
 	}
 
-	get name(){
-		return this.name_;
-	}
-
-	get hp(){
-		return this.hp_;
-	}
-
 	setHp(newVar){
 		this.hp_ = newVar;
 	}
 
+	setStatus(newStatus){
+		this.status_ = newStatus;
+	}
+
+	setMode(newMode){
+		this.mode_ = newMode;
+	}
 	//END Accesseur et Mutateur
 
 	toString(){
@@ -35,25 +33,19 @@ class army {
 		console.log(text);
 	}
 
-	destroy(){
-		console.log(this.toString());
-
-		console.log("!!! Unité Détruite !!!");
-	}
-
 	combat(otherArmy){
 		this.hp_ -= otherArmy.damage;
-		otherArmy.setHp(otherArmy.hp - this.damage_);
+		otherArmy.setHp(otherArmy.hp_ - this.damage_);
 
-		console.log(`Le résultat du combat ${this.name_} contre ${otherArmy.name} est :`);
-		console.log(`${this.name_}: HP = ${this.hp_} et ${otherArmy.name}: HP = ${otherArmy.hp}`);
+		console.log(`Le résultat du combat ${this.name_} contre ${otherArmy.name_} est :`);
+		console.log(`${this.name_}: HP = ${this.hp_} et ${otherArmy.name_}: HP = ${otherArmy.hp_}`);
 
 
 		if(this.hp_ <= 0 ){
-			this.destroy();
+			this.setStatus("Dead");
 		}
-		else if(otherArmy.hp <= 0){
-			otherArmy.destroy();
+		else if(otherArmy.hp_ <= 0){
+			otherArmy.setStatus("Dead");
 		}
 	}
 
