@@ -34,22 +34,27 @@ class trade {
         }
     }
 
-    trading(gold){
+    trading(){
         const rand = Math.random();
+        let gold = 0;
 
         if(rand >= 0.4 && rand <= 0.7){
             console.log("La caravane est arrivée au marché et a vendu son stock pour un prix raisonnable");
-            gold += (this.stock_ * 5);
+            gold = (this.stock_ * 5);
             this.stock_ = 0;
         }
         else if(rand <= 0.7 && rand < 1){
             console.log("La caravane est arrivée au marché et a vendu son stock pour un très bon prix !")
-            gold += (this.stock_ * 10);
+            gold = (this.stock_ * 10);
             this.stock_ = 0;
         }
         else{
             console.log("La caravane a été attaqué par des bandits sur le chemin ! Tout le stock a été perdu ='(");
             this.stock_ = 0;
         }
+
+        return gold;
     }
 }
+
+module.exports = {trade};
