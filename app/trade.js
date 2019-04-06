@@ -23,28 +23,28 @@ class trade {
         console.log(text);
     }
 
-    setStock(){
-        if(this.city_.divinity_.corn >= 200){
-            this.stock_ = (this.city_.divinity_.corn) / 5;
-            this.city_.divinity_.corn -= this.stock_;
+    setStock(corn){
+        if(corn >= 200){
+            this.stock_ = (corn) / 5;
+            corn -= this.stock_;
         }
         else{
             this.stock_ = 20;
-            this.city_.divinity_.corn -= this.stock_;
+            corn -= this.stock_;
         }
     }
 
-    trading(){
+    trading(gold){
         const rand = Math.random();
 
         if(rand >= 0.4 && rand <= 0.7){
             console.log("La caravane est arrivée au marché et a vendu son stock pour un prix raisonnable");
-            this.city_.divinity_.gold += (this.stock_ * 5);
+            gold += (this.stock_ * 5);
             this.stock_ = 0;
         }
         else if(rand <= 0.7 && rand < 1){
             console.log("La caravane est arrivée au marché et a vendu son stock pour un très bon prix !")
-            this.city_.divinity_.gold += (this.stock_ * 10);
+            gold += (this.stock_ * 10);
             this.stock_ = 0;
         }
         else{
