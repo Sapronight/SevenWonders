@@ -9,11 +9,11 @@
     "codestyle": "xo"
   },
   "xo": {
-    " envs ": [
-      " mocha "
+    "envs": [
+      "mocha"
     ],
-    " space ": 2,
-    " prettier ": true
+    "space": 2,
+    "prettier": true
   },
   "devDependencies": {
     "after": "^0.8.2",
