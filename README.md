@@ -6,7 +6,7 @@ Projet JavaScript par Mathilde AMAR et Adrien TRAN
 Ce projet est inspiré du jeu de plateau Seven Wonders où chaque joueur se doit de développer sa ville. Ici, nous cherchons à simuler
 divers évènements qui conduisent au développement ou non d'une ville instanciée.
 
-Nous détaillons plus bas les différentes classes présentes dans le fichier [app](app/).
+Nous détaillons plus bas les différentes classes présentes dans le dossier [app](app/).
 
 ## Installation et exécution
 Pour lancer la simulation, il faut exécuter [index.js](index.js).
