@@ -10,6 +10,7 @@ Nous détaillons plus bas les différentes classes présentes dans le dossier [a
 
 ## Installation et exécution
 Pour lancer la simulation, il faut exécuter [index.js](index.js).
+On peut aussi lancer "gulp" dans le terminal de votre IDE.
 
 ## Classe [City](app/city.js)
 Cette classe permet d'instancier une ville et d'y appliquer plusieurs actions telle que lever une armée ou la possibilité de faire du 
