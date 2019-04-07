@@ -9,8 +9,15 @@ divers évènements qui conduisent au développement ou non d'une ville instanci
 Nous détaillons plus bas les différentes classes présentes dans le dossier [app](app/).
 
 ## Installation et exécution
+Tout d'abord, il faut initialiser nos dépendances à partir du terminal de l'IDE en inscrivant la commande suivante :
+```
+yarn
+```
 Pour lancer la simulation, il faut exécuter [index.js](index.js).
-On peut aussi lancer "gulp" dans le terminal de votre IDE.
+On peut aussi lancer depuis le terminal de l'IDE en utilisant la commande gulp :
+```
+gulp
+```
 
 ## Classe [City](app/city.js)
 Cette classe permet d'instancier une ville et d'y appliquer plusieurs actions telle que lever une armée ou la possibilité de faire du 
@@ -21,7 +28,7 @@ Cette classe permet de créer des troupes utilisables par la ville. Elle gère l
 ou lorsqu'elles sont mortes lors d'un combat.
 
 ## Classe [Trade](app/trade.js)
-Cette classe permet de gérer le commerce pour une ville vers un marché fictif. Elle permet de créer une caravane qui récupère un stock selon les ressources de la ville pour les vendre contre des golds.
+Cette classe permet de gérer le commerce pour une ville vers un marché fictif. Elle permet de créer une caravane qui récupère un stock selon les ressources en corn de la ville pour les vendre contre des golds.
 
 
 ## Améliorations possibles

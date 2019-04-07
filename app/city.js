@@ -116,6 +116,7 @@ class City {
     }
   }
 
+  // Action tour à tour des troupes
   actionArmy(enemy) {
     for (let i = 0; i < this.tableArmy_.length; i++) {
       if (
@@ -134,6 +135,7 @@ class City {
     this.checkArmy();
   }
 
+  // Pour vérifier les troupes vivantes et mortes
   checkArmy() {
     const tabTemp = [];
     let cpt = 0;
@@ -162,13 +164,7 @@ class City {
     }
   }
 
-  // Permet le commerce grâce à la classe trade
-  tradingCity() {
-    this.corn_ -= this.trader_.setStock(this.corn_);
-    this.gold_ += this.trader_.trading();
-    this.showInfoCity();
-  }
-
+  // Pour actualiser l'armé
   updateArmy() {
     if (this.maxArmy_ >= 5) {
       const rand = Math.random();
@@ -184,6 +180,13 @@ class City {
         this.spawnArmy('Peon');
       }
     }
+  }
+
+  // Permet le commerce grâce à la classe trade
+  tradingCity() {
+    this.corn_ -= this.trader_.setStock(this.corn_);
+    this.gold_ += this.trader_.trading();
+    this.showInfoCity();
   }
 }
 
