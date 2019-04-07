@@ -139,22 +139,18 @@ class City {
 		this.showInfoCity();
 	}
 
-	updateArmy(){
-		if(this.maxArmy_ >= 5){
+	updateArmy() {
+		if (this.maxArmy_ >= 5) {
 			const rand = Math.random();
-			if(rand <= 0.2){
+			if (rand <= 0.2) {
 				this.spawnArmy('Dragon');
-			}
-			else if(rand > 0.2 && rand <= 0.4){
+			} else if (rand > 0.2 && rand <= 0.4) {
 				this.spawnArmy('Peon');
-			}
-			else if(rand > 0.4 && rand <= 0.6){
+			} else if (rand > 0.4 && rand <= 0.6) {
 				this.spawnArmy('Berserker');
-			}
-			else if(rand >0.6 && rand <= 0.8){
+			} else if (rand > 0.6 && rand <= 0.8) {
 				this.spawnArmy('Shield');
-			}
-			else{
+			} else {
 				this.spawnArmy('Peon');
 			}
 		}
