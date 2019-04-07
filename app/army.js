@@ -5,7 +5,7 @@ class Army {
 		this.price_ = armyCost || 10;
 		this.hp_ = armyHp || 100;
 		this.damage_ = armyD || 10;
-		this.mode_ = 'defend';
+		this.mode_ = 'defend'; //Les unités sont par défaut en défense
 		this.status_ = 'healthy';
 	}
 
@@ -27,11 +27,13 @@ class Army {
 	}
 	// END Accesseur et Mutateur
 
+	//Retourne toutes les informations relatives à une troupe
 	toString() {
 		const text = `La troupe ${this.name_}: HP ${this.hp_}, LifeTime ${this.timeLife_}, Mode ${this.mode_}, qui coute: ${this.price_}`;
 		console.log(text);
 	}
 
+	//Permet le combat d'une unité contre une unité ennemie
 	combat(otherArmy) {
 		if (this.mode_ === 'combat') {
 			this.timeLife_ -= 1;

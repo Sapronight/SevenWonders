@@ -25,6 +25,7 @@ class City {
 		this.gold_ += Math.floor(s.gold);
 	}
 
+	//Permet de faire des offrandes à la divinité
 	giveCityCG() {
 		this.divinity_.offeringCorn(this.corn_ / 10);
 		this.divinity_.offeringGold(this.gold_ / 10);
@@ -32,10 +33,12 @@ class City {
 		this.gold_ -= this.gold_ / 10;
 	}
 
+	//Affiche les informations relatives à la ville
 	showInfoCity() {
 		console.log(`${this.name_}: C ${this.corn_}, G ${this.gold_}`);
 	}
 
+	//Crée les unités de la ville
 	spawnArmy(name) {
 		switch (name) {
 			case 'Dragon':
@@ -133,6 +136,7 @@ class City {
 		}
 	}
 
+	//Permet le commerce grâce à la classe trade
 	tradingCity() {
 		this.corn_ -= this.trader_.setStock(this.corn_);
 		this.gold_ += this.trader_.trading();
