@@ -1,12 +1,12 @@
 class Army {
 	constructor(armyCost, armyName, armyHp, armyD) {
 		this.name_ = armyName || 'UNNAMED';
-		this.timeLife_ = 100;
+		this.timeLife_ = 10;
 		this.price_ = armyCost || 10;
 		this.hp_ = armyHp || 100;
 		this.damage_ = armyD || 10;
 		this.mode_ = 'defend';
-		this.status_ = 'Hp_Full';
+		this.status_ = 'healthy';
 	}
 
 	// Accesseur et Mutateur
@@ -33,6 +33,14 @@ class Army {
 	}
 
 	combat(otherArmy) {
+		if (this.mode_ === 'combat') {
+			this.timeLife_ -= 1;
+		}
+
+		if (otherArmy.mode_ === 'combat') {
+			otherArmy.timeLife_ -= 1;
+		}
+
 		this.hp_ -= otherArmy.damage;
 		otherArmy.setHp(otherArmy.hp_ - this.damage_);
 
@@ -47,6 +55,14 @@ class Army {
 			otherArmy.setStatus('dead');
 		} else if (otherArmy.hp_ <= 0 && this.mode_ === 'defend') {
 			otherArmy.setStatus('injure');
+		}
+
+		const rand = Math.random();
+
+		if (rand <= 0.05) {
+			this.status_ = 'dead';
+		} else if (rand > 0.05 && rand <= 0.1) {
+			this.status_ = 'injure';
 		}
 	}
 }

@@ -1,21 +1,7 @@
 class Trade {
-	constructor(id, hp, city) {
-		this.id_ = id;
-		this.hp_ = hp;
+	constructor(id) {
+		this.id_ = id || 'UNNAMED';
 		this.stock_ = 0;
-		this.city_ = city;
-	}
-
-	get id() {
-		return this.id_;
-	}
-
-	get hp() {
-		return this.hp_;
-	}
-
-	get stock() {
-		return this.stock_;
 	}
 
 	toString() {
@@ -26,11 +12,11 @@ class Trade {
 	setStock(corn) {
 		if (corn >= 200) {
 			this.stock_ = (corn) / 5;
-			corn -= this.stock_;
 		} else {
 			this.stock_ = 20;
-			corn -= this.stock_;
 		}
+
+		return this.stock_;
 	}
 
 	trading() {
