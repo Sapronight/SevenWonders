@@ -10,7 +10,7 @@ class City {
 		this.gold_ = 1000;
 		this.tableArmy_ = []; // Tableau de troupe
 		this.maxArmy_ = 10; // Seulement 10 troupes par ville
-		this.trader_ = new Trade(traderName); //Création d'une caravane pour le commerce
+		this.trader_ = new Trade(traderName); // Création d'une caravane pour le commerce
 		this.init();
 	}
 
@@ -24,19 +24,21 @@ class City {
 		this.corn_ += Math.floor(s.corn);
 		this.gold_ += Math.floor(s.gold);
 	}
-	//Permet de faire des offrandes à la divinité
+
+	// Permet de faire des offrandes à la divinité
 	giveCityCG() {
-		this.divinity_.offeringCorn(this.corn_ / 10); //Offre 1/10 des ressources en corn
-		this.divinity_.offeringGold(this.gold_ / 10); //Offre 1/10 des ressources en gold
+		this.divinity_.offeringCorn(this.corn_ / 10); // Offre 1/10 des ressources en corn
+		this.divinity_.offeringGold(this.gold_ / 10); // Offre 1/10 des ressources en gold
 		this.corn_ -= this.corn_ / 10;
 		this.gold_ -= this.gold_ / 10;
 	}
 
-	//Affiche les informations relatives à la ville
+	// Affiche les informations relatives à la ville
 	showInfoCity() {
 		console.log(`${this.name_}: C ${this.corn_}, G ${this.gold_}`);
 	}
-	//Crée les unités de la ville
+
+	// Crée les unités de la ville
 	spawnArmy(name) {
 		switch (name) {
 			case 'Dragon':
@@ -133,7 +135,8 @@ class City {
 			this.maxArmy_ += 1;
 		}
 	}
-	//Permet le commerce grâce à la classe trade
+
+	// Permet le commerce grâce à la classe trade
 	tradingCity() {
 		this.corn_ -= this.trader_.setStock(this.corn_);
 		this.gold_ += this.trader_.trading();
