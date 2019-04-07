@@ -125,7 +125,7 @@ class City {
 				console.log(`L'unité: ${this.tableArmy_[i].name_} de la ville: ${this.name_} est morte !`);
 			} else if (this.tableArmy_[i].timeLife_ <= 0) {
 				tabTemp.push(i);
-				console.log(`L'unité: ${this.tableArmy_[i].name_} de la ville: ${this.name_} est morte de viellesse !`);
+				console.log(`L'unité: ${this.tableArmy_[i].name_} de la ville: ${this.name_} est morte de vieillesse !`);
 			}
 		}
 
