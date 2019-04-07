@@ -16,8 +16,8 @@ class City {
 
 	init() {
 		this.divinity_.init();
-		this.divinity_.worldEvents.on('favor', shit => this.getCityCG(shit));
-		this.divinity_.worldEvents.on('blessing', shit => this.getCityCG(shit));
+		this.divinity_.worldEvents.on('favor', ressource => this.getCityCG(ressource));
+		this.divinity_.worldEvents.on('blessing', ressource => this.getCityCG(ressource));
 	}
 
 	getCityCG(s) {
