@@ -9,8 +9,15 @@ divers évènements qui conduisent au développement ou non d'une ville instanci
 Nous détaillons plus bas les différentes classes présentes dans le dossier [app](app/).
 
 ## Installation et exécution
+Tout d'abord, il faut initialiser nos dépendances à partir du terminal de l'IDE en inscrivant la commande suivante :
+```
+yarn
+```
 Pour lancer la simulation, il faut exécuter [index.js](index.js).
-On peut aussi lancer "gulp" dans le terminal de l'IDE.
+On peut aussi lancer depuis le terminal de l'IDE en utilisant la commande gulp :
+```
+gulp
+```
 
 ## Classe [City](app/city.js)
 Cette classe permet d'instancier une ville et d'y appliquer plusieurs actions telle que lever une armée ou la possibilité de faire du 
