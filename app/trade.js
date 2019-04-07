@@ -6,10 +6,9 @@ class Trade {
 
 	//Affiche toutes les informations relatives à la caravane
 	toString() {
-		const text = `La caravane ${this.id_} avec ${this.hp_} HP et transportant ${this.stock_} de marchandises`;
+		const text = `La caravane ${this.id_} transportant ${this.stock_} de marchandises`;
 		console.log(text);
 	}
-
 	//Permet de déterminer le stock à vendre en fonction de la quantité de corn de la ville
 	setStock(corn) {
 		if (corn >= 200) {
@@ -25,9 +24,7 @@ class Trade {
 	trading() {
 		const rand = Math.random();
 		let gold = 0;
-
-		//La caravane n'est pas attaquée et échange son corn
-		if (rand >= 0.4 && rand <= 0.7) {
+		if (rand >= 0.4 && rand <= 0.7) { //La caravane n'est pas attaquée et échange son corn
 			console.log('La caravane est arrivée au marché et a vendu son stock pour un prix raisonnable');
 			gold = (this.stock_ * 5);
 			this.stock_ = 0;
@@ -35,7 +32,7 @@ class Trade {
 			console.log('La caravane est arrivée au marché et a vendu son stock pour un très bon prix !');
 			gold = (this.stock_ * 10);
 			this.stock_ = 0;
-		} else { //La caravane est attaquée et perd son stock sans le vendre
+		} else {  //La caravane est attaquée et perd son stock sans le vendre
 			console.log('La caravane a été attaqué par des bandits sur le chemin ! Tout le stock a été perdu =\'(');
 			this.stock_ = 0;
 		}

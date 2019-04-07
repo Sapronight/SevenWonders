@@ -9,7 +9,7 @@ class Army {
 		this.status_ = 'healthy';
 	}
 
-	// Accesseur et Mutateur
+	// Accesseurs et Mutateurs
 	get damage() {
 		return this.damage_;
 	}
@@ -25,14 +25,13 @@ class Army {
 	setMode(newMode) {
 		this.mode_ = newMode;
 	}
-	// END Accesseur et Mutateur
+	// END Accesseurs et Mutateurs
 
 	//Retourne toutes les informations relatives à une troupe
 	toString() {
-		const text = `La troupe ${this.name_}: HP ${this.hp_}, LifeTime ${this.timeLife_}, Mode ${this.mode_}, qui coute: ${this.price_}`;
+		const text = `La troupe ${this.name_}: HP ${this.hp_}, LifeTime ${this.timeLife_}, Mode ${this.mode_}, qui coûte: ${this.price_}`;
 		console.log(text);
 	}
-
 	//Permet le combat d'une unité contre une unité ennemie
 	combat(otherArmy) {
 		if (this.mode_ === 'combat') {
